@@ -1,6 +1,7 @@
 1. monitor mode is like promiscuous mode of the ethernet world where all the traffic can be monitored at a given time on the current channel.
 
 **Powering up the wireless card**
+
 2. ifconfig wlan0 up ---> start the wireless card 
 
 3. airmon-ng start wlan0 <channel> ---> monitor mode interface is created on top of the device for sniffing 
