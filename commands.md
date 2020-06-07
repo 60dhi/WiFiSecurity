@@ -13,10 +13,10 @@
 5. mdk3 wlan0mon b -n baba ---> Creating a fake AP broadcasting beacons with SSID baba
 
 **Finding Hidden SSIDs**
-6. 
 
-		a. Passive way - monitor the network for clients to connect
-		b. active way - break all the connections between clients and Access point and further monitor the traffic for assocication traffic.
+6. 
+	a. Passive way - monitor the network for clients to connect
+	b. active way - break all the connections between clients and Access point and further monitor the traffic for assocication traffic.
 		
 		(send the deauthentication notification packet to the clients)
 		aireplay-ng --deauth 0 -a <BSSID> wlan0mon -D   
