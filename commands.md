@@ -1,4 +1,4 @@
-1. monitor is mode is like promiscuous mode of the ethernet world where all the traffic can be monitored at a given time on the current channel.
+1. monitor mode is like promiscuous mode of the ethernet world where all the traffic can be monitored at a given time on the current channel.
 
 **Powering up the wireless card**
 2. ifconfig wlan0 up ---> start the wireless card 
