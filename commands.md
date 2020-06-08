@@ -134,11 +134,11 @@
 
 		e. netsh wlan show profiles name="SSID" --> look at the configuration details of a previously connected AP
 
-		f. netsh wlan connect name="kela" interface="Wi-Fi" --> Connect to a wifi network from cmd
+		f. netsh wlan connect name="Korona" interface="Wi-Fi" --> Connect to a wifi network from cmd
 
-		g. netsh wlan export profile name="kela"  --> Dump the profile in an external file
+		g. netsh wlan export profile name="Korona"  --> Dump the profile in an external file
 
-		h. netsh wlan show profile name="kela" key=clear  --> Dump wifi password in plain text
+		h. netsh wlan show profile name="Korona" key=clear  --> Dump wifi password in plain text
 
 		i. netsh wlan set hostednetwork mode=allow ssid=Ambanis key=l@urA1234     --> Creating a hosted network on windows
     		netsh wlan start hostednetwork
